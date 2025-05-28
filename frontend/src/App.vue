@@ -46,8 +46,8 @@ watch(darkMode, (newValue) => {
 const drawer = ref(false);
 const menuItems = ref([
     { title: 'Home', path: '/', icon: 'mdi-home' },
-    // { title: 'Sessions', path: '/sessions', icon: 'mdi-scoreboard' },
     { title: 'Games', path: '/games', icon: 'mdi-gamepad' },
+    { title: 'Scores', path: '/scores', icon: 'mdi-scoreboard' },
     // { title: 'Stats', path: '/stats', icon: 'mdi-chart-bar' },
     // { title: 'Leagues', path: '/leagues', icon: 'mdi-account-group' },
     // { title: 'Settings', path: '/settings', icon: 'mdi-cog' },

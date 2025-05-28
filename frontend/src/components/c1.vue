@@ -296,42 +296,35 @@ const endGame = () => {
   gameDuration.value = (new Date(gameEnd.value) - new Date(gameStart.value)) / 1000;
 };
 
-const saveGame = () => {
-  clickedValue.value = 'saved';
-  const gameResult = {
-    gameStart: gameStart.value,
-    gameEnd: gameEnd.value,
-    gameDuration: gameDuration.value,
-    gameData: {
-      gameRules: gameRules.value,
-      conditions: conditions.value,
-      notes: notes.value,
-      rounds: rounds.value,
-    gameTotalMakes: gameTotalMakes.value,
-    gameTotalAttempts: gameTotalAttempts.value
-    }
-  };
-  console.log('Game Result:', gameResult);
-  const gameId = uuidv4();
-  localStorage.setItem(`game-${gameId}`, JSON.stringify(gameResult));
-  
-  //endGamePost(gameResult);
-  router.push(`/games/${gameId}`);
-}
+const saveGame = async () => {
+    clickedValue.value = 'saved';
+    const gameResult = {
+        gameStart: typeof gameStart.value === 'string' ? gameStart.value : new Date(gameStart.value).toISOString(),
+        gameEnd: typeof gameEnd.value === 'string' ? gameEnd.value : (gameEnd.value ? new Date(gameEnd.value).toISOString() : null),
+        gameDuration: gameDuration.value,
+        gameRules: gameRules.value,
+        conditions: conditions.value,
+        notes: notes.value,
+        rounds: rounds.value,
+        totalMakes: gameTotalMakes.value,
+        totalAttempts: gameTotalAttempts.value
+    };
 
-const endGamePost = async (gameResult) => {
-  try {
-    await axios.post('http://localhost:8000/games/', gameResult);
-    console.log('Game data saved to backend.');
-  } catch (error) {
-    if (error.response) {
-        console.error('Server responded with an error:', error.response.data, error.response.status, error.response.headers);
-    } else if (error.request) {
-        console.error('No response received:', error.request);
-    } else {
-        console.error('Error setting up the request:', error.message);
+    try {
+        console.log('Sending game data:', JSON.stringify(gameResult, null, 2));  // Debug log
+        const response = await axios.post('/api/games/', gameResult);
+        console.log('Response:', response.data);  // Debug log
+        const gameId = response.data.uuid;
+        if (gameId) {
+            router.push(`/games/${gameId}`);
+        } else {
+            alert('Game saved, but no game ID returned.');
+        }
+    } catch (error) {
+        console.error('Full error:', error);  // Enhanced error logging
+        console.error('Error response:', error.response);  // Show response if available
+        alert('Failed to save game. Please try again.');
     }
-  }
 };
 
 const playAgain = () => {
@@ -346,14 +339,15 @@ const endRound = () => {
 
   rounds.value.push(
     {
-    roundId: roundIdCounter.value,
-    roundStart: roundStart.value,
-    roundEnd: roundEnd.value,
-    roundDuration: roundDuration.value,
-    roundTotalMakes: roundTotalMakes.value,
-    roundTotalAttempts: roundTotalAttempts.value,
-    stations: roundStations.value
-    });
+      roundId: roundIdCounter.value,
+      roundStart: typeof roundStart.value === 'string' ? roundStart.value : new Date(roundStart.value).toISOString(),
+      roundEnd: typeof roundEnd.value === 'string' ? roundEnd.value : new Date(roundEnd.value).toISOString(),
+      roundDuration: roundDuration.value,
+      roundTotalMakes: roundTotalMakes.value,
+      roundTotalAttempts: roundTotalAttempts.value,
+      stations: roundStations.value
+    }
+  );
 
   if (!gameOver.value) {
     roundIdCounter.value++;

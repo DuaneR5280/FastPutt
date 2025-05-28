@@ -1,203 +1,187 @@
 <template>
   <v-container v-if="gameData">
-    <h1>Game Summary {{ formatDate(gameData.gameStart).split(" ")[0] }}</h1>
+    <h1>Game Summary</h1>
     <v-subheader class="text-caption text-grey-lighten-1 mb-2">{{ gameId }}</v-subheader>
-    <v-row>
-      <v-col cols="4">
-        <v-card
-        class="mb-4"
-        prepend-icon="mdi-clock"
-        subtitle=""
-        title="Start"
-      >
-        <v-card-text class="text-h4">{{ formatDate(gameData.gameStart).split(" ")[1] }}
-        </v-card-text>
-      </v-card>
 
-      </v-col>
-      <v-col cols="4">
-        <v-card
-          prepend-icon="mdi-timer"
-          title="Duration">
-          <v-card-text class="text-h4">
-            {{ formatDuration(gameData.gameDuration) }}
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card
-        class="mb-4"
-        prepend-icon="mdi-clock"
-        subtitle=""
-        title="End"
-      >
-        <v-card-text class="text-h4">{{ formatDate(gameData.gameEnd).split(" ")[1] }}
-        </v-card-text>
-      </v-card>
-
-      </v-col>      
-    </v-row>
+    <v-card class="mb-4">
+      <v-card-title>Game Session</v-card-title>
+      <div class="mx-4 text-subtitle-2 text-grey-lighten-1">{{ formatDate(gameData.gameStart).split(" ")[0] }}</div>
+      <v-card-text>
+        <v-row dense>
+          <v-col cols="12" sm="4" class="text-center">
+            <v-icon>mdi-clock-start</v-icon>
+            <div class="text-subtitle-1">Start</div>
+            <div class="text-h6">{{ formatDate(gameData.gameStart).split(" ")[1] }}</div>
+          </v-col>
+          <v-col cols="12" sm="4" class="text-center">
+            <v-icon>mdi-timer</v-icon>
+            <div class="text-subtitle-1">Duration</div>
+            <div class="text-h6">{{ formatDuration(gameData.gameDuration) }}</div>
+          </v-col>
+          <v-col cols="12" sm="4" class="text-center">
+            <v-icon>mdi-clock-end</v-icon>
+            <div class="text-subtitle-1">End</div>
+            <div class="text-h6">{{ formatDate(gameData.gameEnd).split(" ")[1] }}</div>
+          </v-col>
+        </v-row>
+      </v-card-text>
+    </v-card>
 
     <v-card prepend-icon="mdi-target" title="Total Putts" class="mb-4">
-    <v-col>
-      <v-card-text class="text-h1">
-        {{ gameData.gameData.gameTotalMakes }} / {{ gameData.gameData.gameTotalAttempts }}
-      </v-card-text>
-      <v-progress-linear
-        :model-value="totalMakePercentage"
-        height="25"
-        :color="getPercentageColor(totalMakePercentage)"
-        rounded
-      >
-        <template v-slot:default="{ value }">
-          <strong>{{ Math.round(value) }}%</strong>
-        </template>
-      </v-progress-linear>
-    </v-col>
-  </v-card>
-
-    <!-- Progress Circles Stats -->
-    <v-row>
-      <v-col cols="4">
-        <v-card
-        class="mb-4"
-        prepend-icon="mdi-check-bold"
-        subtitle="session"
-        title="C1 Goal"
-      >
-      <div class="d-flex justify-center align-center">
-      <v-progress-circular
-                :model-value=totalMakePercentage
-                :rotate="-90"
-                :size="100"
-                :width="15"
-                :color="getPercentageColor(totalMakePercentage)"
-                >
-                {{ totalMakePercentage }} %
-              </v-progress-circular>
-      </div>
-      </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card
-        class="mb-4"
-        prepend-icon="mdi-cancel"
-        subtitle="500 putts daily"
-        title="Daily Goal"
-      >
-      <!-- Daily attempts goal ie: 500 putts a day -->
-      <div class="d-flex justify-center align-center">
-      <v-progress-circular
-                :model-value=20
-                :rotate="-90"
-                :size="100"
-                :width="15"
-                :color="getPercentageColor(20)"
-                >
-                20 %
-              </v-progress-circular>
-      </div>
-      </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card
-        class="mb-4"
-        prepend-icon="mdi-check-bold"
-        subtitle="session"
-        title="C2 Goal"
-      >
-      <div class="d-flex justify-center align-center">
-      <v-progress-circular
-                :model-value=totalMakePercentage
-                :rotate="-90"
-                :size="100"
-                :width="15"
-                :color="getPercentageColor(totalMakePercentage)"
-                >
-                {{ totalMakePercentage }} %
-              </v-progress-circular>
-      </div>
-      </v-card>
-      </v-col>
-
-    </v-row>
-
-    <v-card class="mb-4" v-if="gameData.gameData.conditions">
-      <v-card-title>
-        <h2>Conditions</h2>
-      </v-card-title>
-      <v-card-text>
-        {{ gameData.gameData.conditions }}
+      <v-card-text class="text-center">
+        <div class="text-h3 mb-2">
+          {{ gameData.totalMakes }} / {{ gameData.totalAttempts }}
+        </div>
+        <v-progress-linear
+          :model-value="totalMakePercentage"
+          height="30"
+          :color="getPercentageColor(totalMakePercentage)"
+          rounded
+          class="text-h6"
+        >
+          <template v-slot:default="{ value }">
+            <strong>{{ Math.round(value) }}%</strong>
+          </template>
+        </v-progress-linear>
       </v-card-text>
     </v-card>
 
-    <v-card class="mb-4" v-if="gameData.gameData.notes">
-      <v-card-title>
-        <h2>Notes</h2>
-      </v-card-title>
+    <v-card class="mb-4" title="Performance Goals">
       <v-card-text>
-        {{ gameData.gameData.notes }}
+        <v-row dense>
+          <v-col cols="6" sm="6" class="text-center">
+            <v-progress-circular
+              :model-value="totalMakePercentage"
+              :rotate="-90"
+              :size="100"
+              :width="15"
+              :color="getPercentageColor(totalMakePercentage)"
+            >
+              {{ Math.round(totalMakePercentage) }} %
+            </v-progress-circular>
+            <div class="text-subtitle-1 mt-2">C1 Goal (Session)</div>
+          </v-col>
+          <v-col cols="6" sm="6" class="text-center">
+            <v-progress-circular
+              :model-value="20"
+              :rotate="-90"
+              :size="100"
+              :width="15"
+              :color="getPercentageColor(20)"
+            >
+              20 %
+            </v-progress-circular>
+            <div class="text-subtitle-1 mt-2">Daily Goal (500 putts)</div>
+          </v-col>
+        </v-row>
       </v-card-text>
     </v-card>
 
-    <v-card>
-      <v-card-title class="d-flex justify-center align-center">
-        <h2>Rounds</h2>
-      </v-card-title>
+    <v-card class="mb-4" v-if="gameData.conditions">
+      <v-card-title>Conditions</v-card-title>
+      <v-card-text>{{ gameData.conditions }}</v-card-text>
+    </v-card>
+
+    <v-card class="mb-4" v-if="gameData.notes">
+      <v-card-title>Notes</v-card-title>
+      <v-card-text>{{ gameData.notes }}</v-card-text>
+    </v-card>
+
+    <v-card class="mb-4">
+      <v-card-title class="text-center">Rounds</v-card-title>
       <v-card-text>
-        <div v-for="(round, index) in gameData.gameData.rounds" :key="index" class="mb-4">
-          <h3>Round {{ round.roundId }}</h3>
-          <v-row class="my-2">
-            <v-col cols="12">
-              <v-icon>mdi-timer</v-icon>
-              <span class="ml-2">{{ formatDate(round.roundStart).split(" ")[1] }} - {{ formatDate(round.roundEnd).split(" ")[1] }}</span>
-              <span> ({{ formatDuration(round.roundDuration) }})</span>
-            </v-col>
-          </v-row>
-         
-          <div class="pl-4 mb-2 text-h5">
-          {{ round.roundTotalMakes }} / {{ round.roundTotalAttempts }}
+        <v-card
+          v-for="(round, index) in gameData.rounds"
+          :key="index"
+          class="mb-6 pa-4"
+          variant="outlined"
+        >
+          <h3 class="text-h6 mb-2">Round {{ round.roundId }}</h3>
+          <div class="d-flex align-center mb-2">
+            <v-icon small class="mr-1">mdi-clock</v-icon>
+            <span class="text-body-2"
+              >{{ formatDate(round.roundStart).split(" ")[1] }} -
+              {{ formatDate(round.roundEnd).split(" ")[1] }}</span
+            >
+            <span class="text-caption ml-1"
+              >({{ formatDuration(round.roundDuration) }})</span
+            >
+          </div>
+
+          <div class="mb-2 text-h5 text-center">
+            {{ round.roundTotalMakes }} / {{ round.roundTotalAttempts }}
           </div>
           <v-progress-linear
             :model-value="calcMakePercentage(round.roundTotalMakes, round.roundTotalAttempts)"
             height="25"
-            :color="getPercentageColor(totalMakePercentage)"
+            :color="getPercentageColor(calcMakePercentage(round.roundTotalMakes, round.roundTotalAttempts))"
             rounded
+            class="mb-4"
           >
             <template v-slot:default="{ value }">
-            <strong>{{ Math.round(value) }}%</strong>
+              <strong>{{ Math.round(value) }}%</strong>
             </template>
           </v-progress-linear>
 
-          <v-table class="mt-4">
-            <thead>
-              <tr>
-                <th class="text-center">Distance</th>
-                <th class="text-center">Makes / Attempts</th>
-                <th class="text-center">Make %</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(station, sIndex) in round.stations" :key="sIndex">
-                <td class="text-center">{{ station.distance }}</td>
-                <td class="text-center">{{ station.makes }} / {{ station.attempts }}</td>
-                <td class="text-center"><v-progress-circular
-                :model-value="calcMakePercentage(station.makes, station.attempts)"
-                :rotate="-90"
-                :size="100"
-                :width="15"
-                :color="getPercentageColor(calcMakePercentage(station.makes, station.attempts))"
-                >
-                {{ calcMakePercentage(station.makes, station.attempts) }} %
-              </v-progress-circular></td>
-              </tr>
-            </tbody>
-          </v-table>
-        </div>
+          <v-expansion-panels>
+            <v-expansion-panel title="View Station Details">
+              <v-expansion-panel-text>
+                <div v-if="$vuetify.display.smAndDown">
+                  <v-card
+                    v-for="(station, sIndex) in round.stations"
+                    :key="sIndex"
+                    class="mb-3 pa-2 d-flex flex-column align-center"
+                    variant="flat"
+                  >
+                    <div class="font-weight-bold mb-1">Distance: {{ station.distance }}</div>
+                    <v-progress-circular
+                      :model-value="calcMakePercentage(station.makes, station.attempts)"
+                      :rotate="-90"
+                      :size="80"
+                      :width="10"
+                      :color="getPercentageColor(calcMakePercentage(station.makes, station.attempts))"
+                      class="mb-1"
+                    >
+                      <span class="text-body-2">{{ Math.round(calcMakePercentage(station.makes, station.attempts)) }}%</span>
+                    </v-progress-circular>
+                    <div class="text-caption">
+                      ({{ station.makes }} / {{ station.attempts }})
+                    </div>
+                  </v-card>
+                </div>
+                <v-table v-else class="mt-4">
+                  <thead>
+                    <tr>
+                      <th class="text-center">Distance</th>
+                      <th class="text-center">Make %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(station, sIndex) in round.stations" :key="sIndex">
+                      <td class="text-center">{{ station.distance }}</td>
+                      <td class="text-center">
+                        <v-progress-circular
+                          :model-value="calcMakePercentage(station.makes, station.attempts)"
+                          :rotate="-90"
+                          :size="80"
+                          :width="10"
+                          :color="getPercentageColor(calcMakePercentage(station.makes, station.attempts))"
+                        >
+                          {{ Math.round(calcMakePercentage(station.makes, station.attempts)) }} %
+                        </v-progress-circular>
+                        <div class="text-caption mt-1">({{ station.makes }} / {{ station.attempts }})</div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </v-table>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-card>
       </v-card-text>
     </v-card>
 
-    <v-btn to="/" class="mt-4">Return to Home</v-btn>
+    <v-btn to="/" class="mt-4" block>Return to Home</v-btn>
   </v-container>
   <div v-else>
     <p>Game not found.</p>
@@ -207,25 +191,35 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+import { useDisplay } from 'vuetify'; // Import useDisplay
 
 const route = useRoute();
 const gameId = route.params.id;
 const gameData = ref(null);
 const totalMakePercentage = ref(0);
+const display = useDisplay(); // Use the display composable
 
-onMounted(() => {
-  const storedGameData = localStorage.getItem(`game-${gameId}`);
-  if (storedGameData) {
-    gameData.value = JSON.parse(storedGameData);
-    totalMakePercentage.value = calcMakePercentage(gameData.value.gameData.gameTotalMakes, gameData.value.gameData.gameTotalAttempts);
+onMounted(async () => {
+  try {
+    const response = await fetch(`/api/games/${gameId}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch game data');
+    }
+    const data = await response.json();
+    gameData.value = data;
+    totalMakePercentage.value = calcMakePercentage(data.totalMakes, data.totalAttempts);
+  } catch (err) {
+    console.error('Error loading game:', err);
+    gameData.value = null;
+    totalMakePercentage.value = 0;
   }
 });
 
 const calcMakePercentage = (makes, attempts) => {
   if (attempts === 0) {
-    return '0%';
+    return 0; // Return a number, not a string, for model-value
   }
-  return ((makes / attempts) * 100);
+  return parseFloat(((makes / attempts) * 100).toFixed(1)); // Return a number, rounded
 }
 
 const getPercentageColor = (percentage) => {
@@ -238,21 +232,21 @@ const getPercentageColor = (percentage) => {
   }
 };
 
-
 const formatDuration = (seconds) => {
   if (seconds < 60) {
     return `${Math.floor(seconds)} seconds`;
   } else if (seconds < 3600) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = Math.floor(seconds % 60);
-    return `${minutes} minutes ${remainingSeconds} seconds`;
+    return `${minutes}m ${remainingSeconds}s`; // Shorter format for duration
   } else {
     const hours = Math.floor(seconds / 3600);
     const remainingMinutes = Math.floor((seconds % 3600) / 60);
-    const remainingSeconds = seconds % 60;
-    return `${hours} hours ${remainingMinutes} minutes ${remainingSeconds} seconds`;
+    const remainingSeconds = Math.floor(seconds % 60); // Ensure seconds are floored
+    return `${hours}h ${remainingMinutes}m ${remainingSeconds}s`;
   }
 };
+
 const formatDate = (isoString) => {
   if (!isoString) return '';
   const date = new Date(isoString);
@@ -268,7 +262,7 @@ const formatDate = (isoString) => {
 </script>
 
 <style scoped>
-.v-progress-circular {
-  margin: 1rem;
-}
+/* No specific scoped styles needed if using Vuetify's utility classes effectively */
+/* benjamin felipe rodarte */
 </style>
+

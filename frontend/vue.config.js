@@ -2,15 +2,18 @@ const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
     devServer: {
-        port: 8080,
+        port: 8085,
+        host: '0.0.0.0', // Add this to allow external connections
         allowedHosts: 'all',
         proxy: {
             '/api': {
-                target: 'http://backend:8000',
+                target: 'http://backend:8000', // Backend service in Docker
                 changeOrigin: true,
+                secure: false, // Add this line
                 pathRewrite: {
                     '^/api': ''
-                }
+                },
+                logLevel: 'debug', // Log proxy activity
             }
         }
     },
