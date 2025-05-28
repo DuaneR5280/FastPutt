@@ -1,0 +1,423 @@
+[
+  {
+    "gameStart": "2025-05-24T04:51:29.045Z",
+    "gameEnd": "2025-05-24T05:33:37.063Z",
+    "gameDuration": 2528,
+    "gameRules": "C1",
+    "conditions": "Perfect ",
+    "notes": "Putt grip feels slightly better with pinkie on rim when 25' and in. Better accuracy with it off rim outside that distance.\nIf gril feels funny default to on rim. ",
+    "rounds": [
+      {
+        "roundId": 1,
+        "roundStart": "2025-05-23T22:51:29.051Z",
+        "roundEnd": "2025-05-23T23:00:26.906Z",
+        "roundDuration": 537.855,
+        "roundTotalMakes": 39,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 4,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 2,
+        "roundStart": "2025-05-23T23:00:26.907Z",
+        "roundEnd": "2025-05-23T23:08:09.207Z",
+        "roundDuration": 462.3,
+        "roundTotalMakes": 38,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 5,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 7,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 3,
+        "roundStart": "2025-05-23T23:08:09.208Z",
+        "roundEnd": "2025-05-23T23:15:29.664Z",
+        "roundDuration": 440.456,
+        "roundTotalMakes": 34,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 4,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 4,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 4,
+        "roundStart": "2025-05-23T23:15:29.665Z",
+        "roundEnd": "2025-05-23T23:24:45.376Z",
+        "roundDuration": 555.711,
+        "roundTotalMakes": 34,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 3,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 5,
+        "roundStart": "2025-05-23T23:24:45.377Z",
+        "roundEnd": "2025-05-23T23:33:37.063Z",
+        "roundDuration": 531.686,
+        "roundTotalMakes": 33,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 5,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 5,
+            "attempts": 10
+          }
+        ]
+      }
+    ],
+    "totalMakes": 178,
+    "totalAttempts": 250
+  },
+  {
+    "gameStart": "2025-05-24T21:33:14.872Z",
+    "gameEnd": "2025-05-24T22:01:04.900Z",
+    "gameDuration": 1670,
+    "gameRules": "C1",
+    "conditions": "Calm and cool, overcast ",
+    "notes": "Felt weak. Tired and not the best. Not sure if it's fatigue from yesterday or just being low energy today. ",
+    "rounds": [
+      {
+        "roundId": 1,
+        "roundStart": "2025-05-24T15:33:14.880Z",
+        "roundEnd": "2025-05-24T15:45:06.373Z",
+        "roundDuration": 711.493,
+        "roundTotalMakes": 33,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 4,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 5,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 2,
+        "roundStart": "2025-05-24T15:45:06.379Z",
+        "roundEnd": "2025-05-24T15:51:48.220Z",
+        "roundDuration": 401.841,
+        "roundTotalMakes": 25,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 4,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 1,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 3,
+        "roundStart": "2025-05-24T15:51:48.220Z",
+        "roundEnd": "2025-05-24T16:01:04.899Z",
+        "roundDuration": 556.679,
+        "roundTotalMakes": 31,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 8,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 3,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 5,
+            "attempts": 10
+          }
+        ]
+      }
+    ],
+    "totalMakes": 89,
+    "totalAttempts": 150
+  },
+  {
+    "gameStart": "2025-05-23T03:06:25.406Z",
+    "gameEnd": "2025-05-23T03:31:56.878Z",
+    "gameDuration": 1531,
+    "gameRules": "C1",
+    "conditions": "Excellent ",
+    "notes": "Did burpies for each miss before starting next station. ",
+    "rounds": [
+      {
+        "roundId": 1,
+        "roundStart": "2025-05-22T21:06:25.406Z",
+        "roundEnd": "2025-05-22T21:13:14.839Z",
+        "roundDuration": 409.433,
+        "roundTotalMakes": 22,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 3,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 1,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 2,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 2,
+        "roundStart": "2025-05-22T21:13:14.839Z",
+        "roundEnd": "2025-05-22T21:21:48.840Z",
+        "roundDuration": 514.001,
+        "roundTotalMakes": 26,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 10,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 6,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 4,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 0,
+            "attempts": 10
+          }
+        ]
+      },
+      {
+        "roundId": 3,
+        "roundStart": "2025-05-22T21:21:48.840Z",
+        "roundEnd": "2025-05-22T21:31:56.878Z",
+        "roundDuration": 608.038,
+        "roundTotalMakes": 30,
+        "roundTotalAttempts": 50,
+        "stations": [
+          {
+            "distance": 15,
+            "makes": 9,
+            "attempts": 10
+          },
+          {
+            "distance": 20,
+            "makes": 7,
+            "attempts": 10
+          },
+          {
+            "distance": 25,
+            "makes": 5,
+            "attempts": 10
+          },
+          {
+            "distance": 30,
+            "makes": 3,
+            "attempts": 10
+          },
+          {
+            "distance": 35,
+            "makes": 6,
+            "attempts": 10
+          }
+        ]
+      }
+    ],
+    "totalMakes": 78,
+    "totalAttempts": 150
+  }
+]

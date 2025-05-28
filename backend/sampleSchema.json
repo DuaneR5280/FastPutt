@@ -1,0 +1,84 @@
+{
+    "game_start": "2025-03-01T08:00:00",
+    "game_end": "2025-03-01T08:45:00",
+    "game_duration": 4500,
+    "game_data": {
+        "gameRules": "C1",
+        "conditions": "Excellent!",
+        "notes": "Putted like a world champion!",
+        "rounds": [
+        {
+            "roundId": 1,
+            "roundStart": "2025-03-01T08:00:00",
+            "roundEnd": "2025-03-01T08:15:00",
+            "roundDuration": 900,
+            "roundTotalMakes": 50,
+            "roundTotalAttempts": 50,
+            "stations": [
+                {
+                    "distance": 15,
+                    "makes": 10,
+                    "attempts": 10
+                },
+                {
+                    "distance": 20,
+                    "makes": 10,
+                    "attempts": 10
+                },
+                {
+                    "distance": 25,
+                    "makes": 10,
+                    "attempts": 10
+                },
+                {
+                    "distance": 30,
+                    "makes": 10,
+                    "attempts": 10
+                },
+                {
+                    "distance": 35,
+                    "makes": 10,
+                    "attempts"  : 10
+                }
+            ]
+        },
+        {
+            "roundId": 2,
+            "roundStart": "2025-03-01T08:16:10",
+            "roundEnd": "2025-03-01T08:45:00",
+            "roundDuration": 1730,
+            "roundTotalMakes": 45,
+            "roundTotalAttempts": 50,
+            "stations": [
+                {
+                    "distance": 15,
+                    "makes": 9,
+                    "attempts": 10
+                },
+                {
+                    "distance": 20,
+                    "makes": 9,
+                    "attempts": 10
+                },
+                {
+                    "distance": 25,
+                    "makes": 9,
+                    "attempts": 10
+                },
+                {
+                    "distance": 30,
+                    "makes": 9,
+                    "attempts": 10
+                },
+                {
+                    "distance": 35,
+                    "makes": 9,
+                    "attempts": 10
+                }
+            ]
+        }
+    ],
+    "game_total_makes": 95,
+    "game_total_attempts": 100
+    }
+}
