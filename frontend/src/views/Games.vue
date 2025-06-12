@@ -211,7 +211,11 @@
                                     The distances and number of putts from each station allow for easy stat calculations
                                     to monitor improvement.</p>
                                 <br>
-                                <p>35' is outside of the circle and is intentional to practice C1 edge putts.</p>
+                                <v-alert class="my-4"
+                                    text="35' is outside of the circle and is intentional to practice C1 edge putts."
+                                    title="Circle Edge" type="info">
+
+                                </v-alert>
 
                             </v-card-text>
                         </v-sheet>

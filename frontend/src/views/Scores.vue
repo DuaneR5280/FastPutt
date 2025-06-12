@@ -31,7 +31,7 @@ const router = useRouter();
 
 const headers = [
     { title: 'Date', key: 'date' },
-    { title: 'Game ID', key: 'uuid' },
+    // { title: 'Game ID', key: 'uuid' },
     { title: 'Total Makes', key: 'totalMakes' },
     { title: 'Total Attempts', key: 'totalAttempts' },
     { title: 'Rules', key: 'gameRules' },
